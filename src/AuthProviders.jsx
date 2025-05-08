@@ -7,7 +7,9 @@ const AuthProviders = ({ children }) => {
   const [warLogs, setWarLogs] = useState([]);
   useEffect(() => {
     (async () => {
-      const response = await axios.get("http://localhost:3000/api/clan-info");
+      const response = await axios.get(
+        "https://coc-server-cvaj.onrender.com/api/clan-info"
+      );
       const data = response.data;
       setclanInfo(data);
       setLoading(false);
@@ -16,7 +18,9 @@ const AuthProviders = ({ children }) => {
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get("http://localhost:3000/api/war-logs");
+      const response = await axios.get(
+        "https://coc-server-cvaj.onrender.com/api/war-logs"
+      );
       const data = response.data;
       setWarLogs(data);
     })();
